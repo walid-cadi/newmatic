@@ -13,7 +13,7 @@ export default function About() {
             <div className="h-[100%] w-[50%] flex flex-col p-10">
               <h1 className='text-2xl font-bold'>Obtenez la meilleure vidéo surveillance</h1>
               <h1 className='text-2xl font-bold'>Solutions pour la maison</h1>
-              <p className='font-semibold pt-5 text-beta'>
+              <p className='font-semibold pt-5 '>
               Newmatic est un leader dans le domaine des solutions de sécurité électronique, dédié à offrir des technologies innovantes et fiables pour répondre aux défis complexes du 
               monde moderne. Avec une expertise approfondie et une approche centrée sur le client, nous proposons une gamme complète de produits,
                incluant la vidéosurveillance, les alarmes anti-intrusion, le contrôle d'accès, et la détection incendie, conçus pour protéger 
