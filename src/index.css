@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    font-family: 'Roboto';
+}
 
 .home {
     background-image: url("./assets/images/Leonardo_Vision_XL_Une_scne_chaleureuse_et_familiale_illustran_3.jpg");
