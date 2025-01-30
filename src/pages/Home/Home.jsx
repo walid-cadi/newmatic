@@ -7,7 +7,6 @@ import Blogs from '../../components/Blogs'
 export default function Home() {
   return (
     <div className='flex-col '>
-        <NavBar />
         <LandingPage/>
         <About/>
         <Blogs/>
