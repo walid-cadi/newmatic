@@ -92,7 +92,7 @@ export default function Blogs() {
         return (
         <div
           key={card.id}
-          className={`w-full ${isSelected ? "h-[50vh] flex-col justify-center" : "h-auto"}  flex flex-col shadow-lg shadow-gray-400 rounded-lg overflow-hidden transition-all duration-500 ${
+          className={`w-full ${isSelected ? "md:h-[50vh] flex-col justify-center" : "h-auto"}  flex flex-col shadow-lg shadow-gray-400 rounded-lg overflow-hidden transition-all duration-500 ${
             selectedCard === null || selectedCard === card.id
               ? "block"
               : "hidden"
@@ -109,11 +109,11 @@ export default function Blogs() {
           />
           <div className={`${isSelected ? "px-6 pt-0 pb-6": "p-6"}`}>
             <h1 className="text-lg font-bold">{card.title}</h1>
-            <p className="line-clamp-6 pt-2 text-sm md:text-base">
+            <p className={` md:line-clamp-6 pt-2 text-sm md:text-base`}>
               {card.description}
             </p>
-            <button
-              className={`font-semibold ${isSelected ? "flex-row-reverse flex" : "flex" }  items-center justify-center gap-x-1 pt-4 text-primary`}
+              <button
+              className={`font-semibold ${isSelected ? "hidden md:flex-row-reverse md:flex" : "hidden md:flex" }  items-center justify-center gap-x-1 pt-4 text-primary`}
               onClick={() =>
                 setSelectedCard(selectedCard === card.id ? null : card.id)
               }
@@ -121,6 +121,7 @@ export default function Blogs() {
               <p className="pb-1">{isSelected ? "retour" : "En savoir plus"}</p>
               {isSelected ? <FaLongArrowAltLeft/> : <FaLongArrowAltRight />}
             </button>
+            
           </div>
         </div>
       )})}

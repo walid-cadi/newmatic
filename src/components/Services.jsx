@@ -50,7 +50,7 @@ export default function Services() {
                         activeLocation.city === location.city
                             ? "bg-alpha"
                             : "bg-beta"
-                    } text-sm md:text-lg font-semibold px-5 py-2 text-white `}
+                    } text-sm md:text-lg font-semibold px-5 py-2 text-white rounded-lg`}
                     onClick={() => setActiveLocation(location)}
                 >
                     {location.city}
