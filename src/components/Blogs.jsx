@@ -3,6 +3,8 @@ import img1 from "../assets/images/Design sans titre (40).png"
 import img2 from "../assets/images/Design sans titre (41).png"
 import img3 from "../assets/images/Design sans titre (42).png"
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa'
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 export default function Blogs() {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -35,9 +37,14 @@ export default function Blogs() {
   className="px-6 sm:px-10 md:px-20 lg:px-36 py-10 md:py-20 w-full h-auto flex flex-col items-center gap-y-10"
 >
   {/* Section Title */}
-  <h1 className="text-2xl md:text-4xl font-bold text-center">
+  <motion.h1 
+  variants={fadeIn("down", 0.2)}
+  initial="hidden"
+  whileInView={"show"}
+  viewport={{ once: false, amount: 0.7 }}
+  className="text-2xl md:text-4xl font-bold text-center">
     Nos domaines d’expertise
-  </h1>
+  </motion.h1>
 
   {/* Cards Container */}
   {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -86,7 +93,12 @@ export default function Blogs() {
       </div>
     </div>
   </div> */}
-  <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 `}>
+  <motion.div 
+  variants={fadeIn("up", 0.2)}
+  initial="hidden"
+  whileInView={"show"}
+  viewport={{ once: false, amount: 0.7 }}
+  className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 `}>
       {cards.map((card) => {
         const isSelected = selectedCard === card.id;
         return (
@@ -125,7 +137,7 @@ export default function Blogs() {
           </div>
         </div>
       )})}
-    </div>
+    </motion.div>
 </div>
 
   )

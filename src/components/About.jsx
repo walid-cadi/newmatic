@@ -2,22 +2,34 @@ import React from 'react'
 import img1 from "../assets/images/pexels-cottonbro-3205737.jpg"
 import img2 from "../assets/images/pexels-asphotograpy-96612.jpg"
 import img3 from "../assets/images/pexels-phaeng-_yo-1503481-17440970.jpg"
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 export default function About() {
   return (
     <div id="nous" className="px-5 sm:px-10 md:px-20 lg:px-36 py-20 w-full h-auto">
-    <div className="w-full flex flex-col md:flex-row items-center md:items-start ">
-        {/* Image Section */}
-        <div className="w-full md:w-1/2 flex flex-col items-center gap-5">
-            <img
-                src={img3}
-                className="w-[300px] pb-10 sm:w-[250px] lg:w-[400px]"
-                alt="Surveillance Camera 1"
-            />
+        <motion.div 
+        variants={fadeIn("right", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="w-full flex flex-col md:flex-row items-center md:items-start ">
+            {/* Image Section */}
+            <div className="w-full md:w-1/2 flex flex-col items-center gap-5">
+                <img
+                    src={img3}
+                    className="w-[300px] pb-10 sm:w-[250px] lg:w-[400px]"
+                    alt="Surveillance Camera 1"
+                />
         </div>
 
         {/* Text Section */}
-        <div className="w-full md:w-[40%] flex flex-col  md:px-8 ">
+        <motion.div 
+        variants={fadeIn("left", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className=" md:w-[40%] flex flex-col  md:px-8 ">
             <h1 className="text-xl md:text-2xl font-bold text-gray-800">
                 Obtenez la meilleure vidéo surveillance
             </h1>
@@ -45,8 +57,8 @@ export default function About() {
                 à bâtir un avenir où chaque espace est protégé avec intelligence
                 et précision.
             </p>
-        </div>
-    </div>
+        </motion.div>
+    </motion.div>
 </div>
 
   )

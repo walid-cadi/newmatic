@@ -1,6 +1,8 @@
 import { button } from 'framer-motion/client';
 import React, { useState } from 'react'
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants";
 
 
 export default function Services() {
@@ -36,30 +38,45 @@ export default function Services() {
     ];
     const [activeLocation, setActiveLocation] = useState(locations[0]);
   return (
-    <div id="services" className="px-5 sm:px-10 md:px-20 lg:px-36 py-10 w-full h-auto flex flex-col items-center gap-y-7">
-    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
-        Nos Points de Vente
-    </h1>
+    <div id="services" className="px-5 my-[15vh] sm:px-10 md:px-20 lg:px-36 py-10 w-full h-auto flex flex-col items-center gap-y-7">
+    
     <div className="flex flex-col items-center justify-center gap-y-7">
         {/* Location Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4">
-            {locations.map((location, index) => (
-                <button
-                    key={index}
-                    className={`${
-                        activeLocation.city === location.city
-                            ? "bg-alpha"
-                            : "bg-beta"
-                    } text-sm md:text-lg font-semibold px-5 py-2 text-white rounded-lg`}
-                    onClick={() => setActiveLocation(location)}
-                >
-                    {location.city}
-                </button>
-            ))}
-        </div>
+        <motion.div 
+        variants={fadeIn("down", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="flex flex-col items-center justify-center gap-4">
+            <h1 
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
+                Nos Points de Vente
+            </h1>
+            <div className='flex  items-center justify-center gap-x-2 md:gap-x-4'>
+                {locations.map((location, index) => (
+                    
+                    <button
+                        key={index}
+                        className={`${
+                            activeLocation.city === location.city
+                                ? "bg-alpha"
+                                : "bg-beta"
+                        } text-sm md:text-lg font-semibold px-5 py-2 text-white rounded-lg`}
+                        onClick={() => setActiveLocation(location)}
+                    >
+                        {location.city}
+                    </button>
+                ))}
+            </div>
+        </motion.div>
 
         {/* Map and Details Section */}
-        <div className="shadow-lg shadow-gray-400 p-5 w-full md:w-[80vw] lg:w-[60vw] h-auto flex flex-col md:flex-row items-center md:items-start gap-y-5">
+        <motion.div 
+        variants={fadeIn("up", 0.2)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="shadow-lg shadow-gray-400 p-5 w-full md:w-[80vw] lg:w-[60vw] h-auto flex flex-col md:flex-row items-center md:items-start gap-y-5">
             {/* Map */}
             <div className="w-full md:w-1/2 h-[300px] md:h-[60vh]">
                 <iframe
@@ -118,7 +135,7 @@ export default function Services() {
         </div>
     </div>
 </div>
-        </div>
+        </motion.div>
     </div>
 </div>
  
