@@ -1,15 +1,35 @@
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 *{
-    font-family: 'Roboto';
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .home {
-    background-image: url("./assets/images/Leonardo_Vision_XL_Une_scne_chaleureuse_et_familiale_illustran_3.jpg");
+    background-image: url("./assets/images/WhatsApp\ Image\ 2025-01-31\ at\ 23.34.21.jpeg");
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: right;
     background-size: cover;
+}
+
+
+.custom-dots li button:before {
+    font-size: 10px;
+    color: orange;
+    opacity: 1;
+  }
+  
+  .custom-dots li.slick-active button:before {
+    color: darkorange;
+  }
+
+.featurs{
+  background-image: url("./assets/images/featurs.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }

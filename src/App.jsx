@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Navbar from "./layouts/NavBar/NavBar";
 import Footer from "./layouts/Footer/Footer";
 
+
 function App() {
   return (
     <>

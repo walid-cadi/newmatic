@@ -1,8 +1,7 @@
 import { button } from 'framer-motion/client';
 import React, { useState } from 'react'
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
-import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+
 
 
 export default function Services() {
@@ -12,7 +11,7 @@ export default function Services() {
             address: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.1274220322275!2d-5.7960555!3d35.7722462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b811d258abb11%3A0x9da9485a0baba9fe!2sNewmatic%20Tanger!5e0!3m2!1sfr!2sma!4v1738096559306!5m2!1sfr!2sma",
             phone: "05 39 32 28 25",
             email:"s.achkari@newmatic.ma",
-            place:"Adresse : 6, Résidence Zineb, Rue Farazdak – Tanger",
+            place:"6, Résidence Zineb, Rue Farazdak – Tanger",
         },
         { 
             city: "Casablanca",
@@ -38,19 +37,15 @@ export default function Services() {
     ];
     const [activeLocation, setActiveLocation] = useState(locations[0]);
   return (
-    <div id="services" className="px-5 my-[15vh] sm:px-10 md:px-20 lg:px-36 py-10 w-full h-auto flex flex-col items-center gap-y-7">
+    <div id="services" className="px-5 bg-white py-[15vh] sm:px-10 md:px-20 lg:px-36  w-full h-auto flex flex-col items-center gap-y-7">
     
     <div className="flex flex-col items-center justify-center gap-y-7">
         {/* Location Buttons */}
-        <motion.div 
-        variants={fadeIn("down", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
+        <div 
         className="flex flex-col items-center justify-center gap-4">
             <h1 
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
-                Nos Points de Vente
+                Nos points de vente
             </h1>
             <div className='flex  items-center justify-center gap-x-2 md:gap-x-4'>
                 {locations.map((location, index) => (
@@ -68,15 +63,11 @@ export default function Services() {
                     </button>
                 ))}
             </div>
-        </motion.div>
+        </div>
 
         {/* Map and Details Section */}
-        <motion.div 
-        variants={fadeIn("up", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-        className="shadow-lg shadow-gray-400 p-5 w-full md:w-[80vw] lg:w-[60vw] h-auto flex flex-col md:flex-row items-center md:items-start gap-y-5">
+        <div 
+        className="bg-white shadow-lg shadow-gray-400 p-5 w-full md:w-[80vw] lg:w-[80vw] h-auto flex flex-col md:flex-row items-center md:items-start gap-y-5">
             {/* Map */}
             <div className="w-full md:w-1/2 h-[300px] md:h-[60vh]">
                 <iframe
@@ -93,18 +84,18 @@ export default function Services() {
             {/* Details */}
             <div className="p-5 w-full md:w-1/2 flex flex-col gap-y-10">
     {/* City Name */}
-    <h1 className="text-xl md:text-2xl font-bold text-gray-800">
+    <h1 className="text-xl md:text-2xl lg:text-4xl text-center font-bold text-alpha">
         {activeLocation.city}
     </h1>
 
     {/* Phone Section */}
-    <div className="flex items-center gap-x-3">
-        <FiPhone className="text-lg text-alpha" />
+    <div className="flex items-center  gap-x-3">
+        <FiPhone className="text-xl text-alpha" />
         <div className="flex flex-col">
-            <h2 className="text-sm md:text-base font-medium text-gray-600">
+            <h2 className="text-sm md:text-base lg:text-xl font-medium text-black font-semibold">
                 Téléphone :
             </h2>
-            <p className="text-sm md:text-base text-gray-800">
+            <p className="text-sm md:text-base lg:text-xl text-gray-800">
                 {activeLocation.phone}
             </p>
         </div>
@@ -114,10 +105,10 @@ export default function Services() {
     <div className="flex items-center gap-x-3">
         <FiMail className="text-lg text-alpha" />
         <div className="flex flex-col">
-            <h2 className="text-sm md:text-base font-medium text-gray-600">
+            <h2 className="text-sm md:text-base lg:text-xl font-medium text-black font-semibold">
                 Email :
             </h2>
-            <p className="text-sm md:text-base text-gray-800">
+            <p className="text-sm md:text-base lg:text-xl text-gray-800">
                 {activeLocation.email}
             </p>
         </div>
@@ -126,16 +117,16 @@ export default function Services() {
     <div className="flex items-center gap-x-3">
         <FiMapPin className="text-lg text-alpha" />
         <div className="flex flex-col">
-            <h2 className="text-sm md:text-base font-medium text-gray-600">
-                Adress :
+            <h2 className="text-sm md:text-base lg:text-xl font-medium text-black font-semibold">
+                Adresse :
             </h2>
-            <p className="text-sm md:text-base text-gray-800">
+            <p className="text-sm md:text-base lg:text-xl text-gray-800">
                 {activeLocation.place}
             </p>
         </div>
     </div>
 </div>
-        </motion.div>
+        </div>
     </div>
 </div>
  

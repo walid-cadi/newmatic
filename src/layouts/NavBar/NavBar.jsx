@@ -2,7 +2,7 @@ import { useState } from 'react';
 import logo from "../../assets/images/Design_sans_titre__43_-removebg-preview.png"
 import { Link } from 'react-router-dom';
 import { ChevronDown } from "lucide-react";
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
 import { CgMenuGridO } from 'react-icons/cg';
 
@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <>
-    <div className="bg-[#f2efe9] fixed top-0 z-20 shadow-sm  shadow-[#f2efe9] w-full py-1 px-7 flex items-center justify-between">
+    <div className="bg-white fixed top-0 z-20 shadow-md  shadow-gray-400 w-full py-1 px-7 flex items-center justify-between">
       <img src={logo} width={170} alt="" />
 
       {/* Desktop Menu */}
@@ -25,7 +25,7 @@ export default function Navbar() {
         A propos de nous
         </Link>
         <Link to=""  className=" hover:text-alpha">
-        Produits
+        Références
         </Link>
         <Link to=""  className=" hover:text-alpha ">
         Contact
@@ -44,7 +44,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-[#f2efe9] z-50 text-center flex flex-col items-center gap-y-4 py-4 font-semibold md:hidden">
+        <div className="absolute top-16 left-0 w-full bg-white z-50 text-center flex flex-col items-center gap-y-4 py-4 font-semibold md:hidden">
           <Link to="/"  className="py-2 hover:text-alpha ">
             Accueil 
           </Link>
@@ -52,27 +52,37 @@ export default function Navbar() {
           A propos de nous
           </Link>
           <Link to=""  className="py-2 hover:text-alpha ">
-          Produits 
+           Références 
           </Link>
           <Link to=""  className="py-2 hover:text-alpha ">
           Contact
           </Link>
           <button className="bg-alpha text-white py-2 px-3 mx-auto w-[90%] rounded-lg">
-            Demander un devis
+          Obtenir un devis
           </button>
           <div className='flex items-center justify-center gap-x-4 text-alpha pt-3 border-t border-beta w-[90%]'>
-            <a href="https://web.facebook.com/newmaticma/?locale=fr_FR&_rdc=1&_rdr#" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
-              <FaFacebook />
-              <p>FaceBook</p>
-            </a>
-            <a href="https://www.instagram.com/newmatic_sarl/" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
-              <FaInstagram />
-              <p>Instagram</p>
-            </a>
-            <a href="https://www.linkedin.com/company/newmaticcasa/" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
-              <FaLinkedin />
-              <p>Linkedin</p>
-            </a>
+            <div className='grid grid-cols-4 gap-2 '>
+              <a href="https://web.facebook.com/newmaticma/?locale=fr_FR&_rdc=1&_rdr#" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
+                <FaFacebook />
+                <p>Facebook</p>
+              </a>
+              <a href="https://www.instagram.com/newmatic_sarl/" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
+                <FaInstagram />
+                <p>Instagram</p>
+              </a>
+              <a href="https://www.linkedin.com/company/newmaticcasa/" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
+                <FaLinkedin />
+                <p>Linkedin</p>
+              </a>
+              <a href="https://youtube.com/@newmatic-sarl?si=JAGr1FvD7aHg7azV" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
+                <FaYoutube />
+                <p>Youtube</p>
+              </a>
+              <a href="https://wa.me/+212600962239" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
+                <FaWhatsapp />
+                <p>Whatsapp</p>
+              </a>
+            </div>
           </div>
           <div className='flex flex-col gap-y-3  text-xl font-semibold'>
             <p>contact@newmatic.ma</p>
@@ -99,14 +109,14 @@ export default function Navbar() {
           )}
         </div> */}
         <button className="bg-alpha text-white py-2 px-3 rounded-lg">
-          Obtenir un devis
+          <a href="https://wa.me/+212600962239" target='_blank' rel="noopener noreferrer">Obtenir un devis</a>
         </button>
         <button onClick={()=>setOpenMenu(!openMenu)} className='text-3xl hidden md:flex'>
           <CgMenuGridO />
         </button>
       </div>
     </div>
-    <div className={`h-full fixed top-0 ${openMenu ? "right-0" : "right-[-700px]"}  w-[25vw] bg-[#f2efe9] shadow-sm  shadow-[#f2efe9] z-30 flex flex-col justify-between py-7 px-9 duration-500`}>
+    <div className={`h-full fixed top-0 ${openMenu ? "right-0" : "right-[-700px]"}  w-[25vw] bg-white shadow-md  shadow-gray-500 z-30 flex flex-col justify-between py-7 px-9 duration-500`}>
           <div className='flex items-center justify-between'>
             <img src={logo} width={170} alt="" />
             <button onClick={()=>setOpenMenu(!openMenu)} className='font-sans text-4xl pb-1 text-beta'><IoMdClose /></button>
@@ -114,7 +124,7 @@ export default function Navbar() {
           <div className='flex flex-col gap-y-[6vh] text-alpha text-3xl'>
             <a href="https://web.facebook.com/newmaticma/?locale=fr_FR&_rdc=1&_rdr#" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
               <FaFacebook />
-              <p>FaceBook</p>
+              <p>Facebook</p>
             </a>
             <a href="https://www.instagram.com/newmatic_sarl/" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
               <FaInstagram />
@@ -124,10 +134,19 @@ export default function Navbar() {
               <FaLinkedin />
               <p>Linkedin</p>
             </a>
+            <a href="https://youtube.com/@newmatic-sarl?si=JAGr1FvD7aHg7azV" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
+              <FaYoutube />
+              <p>Youtube</p>
+            </a>
+            <a href="https://wa.me/+212675246567" target='_blank' rel="noopener noreferrer" className='flex items-center gap-x-2 hover:text-beta duration-200 '>
+              <FaWhatsapp />
+              <p>Whatsapp</p>
+            </a>
           </div>
-          <div className='flex flex-col gap-y-3 py-5 border-t border-beta text-2xl font-semibold'>
+          <div className='flex flex-col gap-y-3 py-5 border-t border-alpha text-2xl text-alpha font-semibold'>
             <p>contact@newmatic.ma</p>
-            <p>05 22 95 00 01 - 05 22 36 80 42</p>
+            <p>+212 5 22 95 00 01</p>
+            <p>+212 5 22 36 80 42</p>
           </div>
     </div>
     </>

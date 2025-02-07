@@ -1,42 +1,38 @@
 import React from 'react'
-import img1 from "../assets/images/pexels-cottonbro-3205737.jpg"
-import img2 from "../assets/images/pexels-asphotograpy-96612.jpg"
-import img3 from "../assets/images/pexels-phaeng-_yo-1503481-17440970.jpg"
-import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+import img1 from "../assets/images/img1.jpeg"
+import img2 from "../assets/images/img2.jpeg"
+
 
 export default function About() {
   return (
-    <div id="nous" className="px-5 sm:px-10 md:px-20 lg:px-36 py-20 w-full h-auto">
-        <motion.div 
-        variants={fadeIn("right", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
+    <div id="about" className="px-5 sm:px-10 md:px-20 lg:px-36 py-20 bg-white w-full h-auto">
+        <div 
         className="w-full flex flex-col md:flex-row items-center md:items-start ">
             {/* Image Section */}
-            <div className="w-full md:w-1/2 flex flex-col items-center gap-5">
+            <div className="w-full md:w-1/2 flex flex-col items-center gap-y-5">
                 <img
-                    src={img3}
-                    className="w-[300px] pb-10 sm:w-[250px] lg:w-[400px]"
+                    src={img2}
+                    className="w-[300px]  sm:w-[250px] lg:w-[400px]"
+                    alt="Surveillance Camera 1"
+                />
+                <img
+                    src={img1}
+                    className="w-[300px]  sm:w-[250px] lg:w-[400px]"
                     alt="Surveillance Camera 1"
                 />
         </div>
 
         {/* Text Section */}
-        <motion.div 
-        variants={fadeIn("left", 0.2)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-        className=" md:w-[40%] flex flex-col  md:px-8 ">
+        <div 
+        className="mt-6 md:mt-0 md:w-[45%] flex flex-col  md:px-8 ">
+            <h1 className='flex gap-x-3 text-alpha font-semibold mb-4'>A propos de nous <span className='w-10 border-t-2 border-alpha mt-3.5'></span></h1>
             <h1 className="text-xl md:text-2xl font-bold text-gray-800">
-                Obtenez la meilleure vidéo surveillance
+            L'Innovation au Service 
             </h1>
             <h1 className="text-xl md:text-2xl font-bold text-gray-800">
-                Solutions pour la maison
+            d'une Sécurité Moderne et Personnalisée
             </h1>
-            <p className="font-semibold pt-5 text-gray-700 leading-relaxed">
+            <p className="font-semibold pt-2 text-gray-700 leading-relaxed text-justify">
                 Newmatic est un leader dans le domaine des solutions de sécurité
                 électronique, dédié à offrir des technologies innovantes et
                 fiables pour répondre aux défis complexes du monde moderne.
@@ -57,8 +53,8 @@ export default function About() {
                 à bâtir un avenir où chaque espace est protégé avec intelligence
                 et précision.
             </p>
-        </motion.div>
-    </motion.div>
+        </div>
+    </div>
 </div>
 
   )
