@@ -1,4 +1,3 @@
-import { button } from 'framer-motion/client';
 import React, { useState } from 'react'
 import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
 
@@ -47,7 +46,7 @@ export default function Services() {
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center">
                 Nos points de vente
             </h1>
-            <div className='flex  items-center justify-center gap-x-2 md:gap-x-4'>
+            <div className='grid grid-cols-2 gap-2 md:flex items-center justify-center md:gap-x-4'>
                 {locations.map((location, index) => (
                     
                     <button

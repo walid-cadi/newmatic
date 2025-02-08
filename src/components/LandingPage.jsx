@@ -59,7 +59,7 @@ export default function LandingPage() {
     {img:img25},
   ];
   const settings = {
-    dots: true,
+    dots: false,
     dotsClass: "slick-dots custom-dots",
     infinite: true,
     slidesToShow: 4,
@@ -94,7 +94,7 @@ export default function LandingPage() {
                 whileInView={"show"}
                 viewport={{ once: false, amount: 0.7 }}
                 className='bg-alpha text-lg font-semibold mt-3 px-7 py-2 text-white rounded-lg' >
-                  <a href="#about">Savoir plus</a>
+                  <a href="#about" >Savoir plus</a>
                   </motion.button>
             </div>
         </div>

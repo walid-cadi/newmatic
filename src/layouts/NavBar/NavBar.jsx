@@ -5,11 +5,18 @@ import { ChevronDown } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import { IoMdClose } from 'react-icons/io';
 import { CgMenuGridO } from 'react-icons/cg';
+import { useAppContext } from '../../context/contextProvider';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropOpen, setIsDropOpen] = useState(false);
   const [openMenu,setOpenMenu] = useState(false);
+
+  const { selectedLanguage, changeLanguage } = useAppContext();
+
+  const handleLanguageChange = (e) => {
+    changeLanguage(e.target.value);
+  };
 
   return (
     <>
@@ -27,7 +34,7 @@ export default function Navbar() {
         <Link to=""  className=" hover:text-alpha">
         Références
         </Link>
-        <Link to=""  className=" hover:text-alpha ">
+        <Link to="/contact"  className=" hover:text-alpha ">
         Contact
         </Link>
       </div>
@@ -54,7 +61,7 @@ export default function Navbar() {
           <Link to=""  className="py-2 hover:text-alpha ">
            Références 
           </Link>
-          <Link to=""  className="py-2 hover:text-alpha ">
+          <Link to="/contact"  className="py-2 hover:text-alpha ">
           Contact
           </Link>
           <button className="bg-alpha text-white py-2 px-3 mx-auto w-[90%] rounded-lg">
@@ -108,6 +115,11 @@ export default function Navbar() {
             </div>
           )}
         </div> */}
+        {/* <select value={selectedLanguage} onChange={handleLanguageChange}>
+          <option value="fr">Français</option>
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+        </select> */}
         <button className="bg-alpha text-white py-2 px-3 rounded-lg">
           <a href="https://wa.me/+212600962239" target='_blank' rel="noopener noreferrer">Obtenir un devis</a>
         </button>

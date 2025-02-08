@@ -5,7 +5,7 @@ import { FiMail, FiMapPin } from "react-icons/fi"
 const Footer = () => {
     return (
     <>
-    <footer className="bg-[#111111] text-white py-10">
+    <footer className="bg-[#111111] text-white py-10 ">
   <div className="container mx-auto px-5 md:px-10 lg:px-20">
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
@@ -43,7 +43,7 @@ const Footer = () => {
           <a href="https://web.facebook.com/newmaticma/?locale=fr_FR&_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400"><FiFacebook /></a>
           <a href="https://www.instagram.com/newmatic_sarl/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400"><FiInstagram /></a>
           <a href="https://www.linkedin.com/company/newmaticcasa/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400"><FiLinkedin /></a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400"><FiYoutube /></a>
+          <a href="https://youtube.com/@newmatic-sarl?si=JAGr1FvD7aHg7azV" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-400"><FiYoutube /></a>
         </div>
       </div>
     </div>

@@ -9,14 +9,24 @@
     font-optical-sizing: auto;
     font-style: normal;
 }
-
-.home {
-    background-image: url("./assets/images/WhatsApp\ Image\ 2025-01-31\ at\ 23.34.21.jpeg");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: cover;
+html {
+  scroll-behavior: smooth;
 }
 
+
+.home {
+  background-image: url("./assets/images/WhatsApp%20Image%202025-01-31%20at%2023.34.21.jpeg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+
+.contact{
+  background-image: url("./assets/images/contact.jpeg");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
 
 .custom-dots li button:before {
     font-size: 10px;
@@ -32,4 +42,29 @@
   background-image: url("./assets/images/featurs.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+
+@media (max-width: 1024px) { /* Tablets */
+  .home {
+      background-position: center right;
+      background-size: cover;
+  }
+  
+}
+
+@media (max-width: 768px) { /* Mobile devices */
+  .home {
+      background-position: center;
+      background-size: contain;
+      background-attachment: fixed; /* Optional for a parallax effect */
+  }
+}
+
+@media (max-width: 480px) { /* Small devices */
+  .home {
+      background-position: center top;
+      background-size: cover;
+  }
+  
 }
